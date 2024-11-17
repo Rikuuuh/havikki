@@ -38,7 +38,7 @@ const Map = ({ locations, selectedLocation, onMarkerClick, mapRef }) => {
   }, [selectedLocation, mapRef]);
 
   return (
-    <MapContainer center={[selectedLocation.lat, selectedLocation.lng]} zoom={13} style={{ height: '500px', width: '500px' }} whenCreated={mapInstance => { mapRef.current = mapInstance; }}>
+    <MapContainer center={[selectedLocation.lat, selectedLocation.lng]} zoom={13} style={{ height: '400px', width: '50%' }} whenCreated={mapInstance => { mapRef.current = mapInstance; }}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -47,7 +47,7 @@ const Map = ({ locations, selectedLocation, onMarkerClick, mapRef }) => {
         <Marker
           key={location.id}
           position={[location.lat, location.lng]}
-          icon={location.waste !== '0kg' ? greenIcon : redIcon}
+          icon={Object.values(location.waste).some(amount => amount !== '0 KG') ? greenIcon : redIcon}
           eventHandlers={{
             click: () => {
               onMarkerClick(location);
@@ -56,7 +56,12 @@ const Map = ({ locations, selectedLocation, onMarkerClick, mapRef }) => {
         >
           <Popup>
             <h2>{location.name}</h2>
-            <p>Jäljellä oleva hävikki: {location.waste}</p>
+            <p>Jäljellä oleva hävikki:</p>
+            <ul>
+              {Object.entries(location.waste).map(([dish, amount], idx) => (
+                <li key={idx}>{dish}: {amount}</li>
+              ))}
+            </ul>
           </Popup>
         </Marker>
       ))}
