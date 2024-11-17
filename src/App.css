@@ -1,5 +1,6 @@
 .app {
-  padding: 100px;
+  padding-top: 100px;
+  background-color: #bdf5bf;
 }
 
 .header {
@@ -12,15 +13,15 @@
 }
 
 .main-content {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 80px; /* Lisää yläreunan marginaali */
+  padding-right: 100px;
+  padding-left: 100px; /* Lisää yläreunan marginaali */
 }
 
 .map-container {
-  width: 60%;
+  width: 100%;
+  height: 100%;
 }
 
 .school-table-container {
-  width: 35%;
+  width: 70%;
 }

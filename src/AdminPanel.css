@@ -13,7 +13,9 @@ h1 {
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .menu-day {
@@ -63,3 +65,4 @@ button:hover {
   color: green;
   text-align: center;
 }
+select{background-color: #f2f2f2;}

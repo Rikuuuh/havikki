@@ -1,9 +1,10 @@
-import React, { useEffect } from 'react';
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import React, { useEffect, useMemo } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, Tooltip, useMap } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import greenMarker from './images/green-marker.png';
 import redMarker from './images/red-marker.png';
+import './Map.css'; // Lisää tämä rivi
 
 // Korjaa Leafletin oletusikonien ongelma
 delete L.Icon.Default.prototype._getIconUrl;
@@ -31,18 +32,13 @@ const redIcon = new L.Icon({
 });
 
 const Map = ({ locations, selectedLocation, onMarkerClick, mapRef }) => {
-  useEffect(() => {
-    if (mapRef.current) {
-      mapRef.current.flyTo([selectedLocation.lat, selectedLocation.lng], 15);
-    }
-  }, [selectedLocation, mapRef]);
-
   return (
-    <MapContainer center={[selectedLocation.lat, selectedLocation.lng]} zoom={13} style={{ height: '400px', width: '50%' }} whenCreated={mapInstance => { mapRef.current = mapInstance; }}>
+    <MapContainer center={[selectedLocation.lat, selectedLocation.lng]} zoom={13} style={{ height: '400px', width: '70%' }} whenCreated={mapInstance => { mapRef.current = mapInstance; }}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
+      <MapUpdater selectedLocation={selectedLocation} mapRef={mapRef} />
       {locations.map((location) => (
         <Marker
           key={location.id}
@@ -54,6 +50,9 @@ const Map = ({ locations, selectedLocation, onMarkerClick, mapRef }) => {
             },
           }}
         >
+          <Tooltip permanent >
+            <span>{location.name}</span>
+          </Tooltip>
           <Popup>
             <h2>{location.name}</h2>
             <p>Jäljellä oleva hävikki:</p>
@@ -67,6 +66,21 @@ const Map = ({ locations, selectedLocation, onMarkerClick, mapRef }) => {
       ))}
     </MapContainer>
   );
+};
+
+const MapUpdater = ({ selectedLocation, mapRef }) => {
+  const map = useMap();
+
+  useMemo(() => {
+    if (map) {
+      map.flyTo([selectedLocation.lat, selectedLocation.lng], 15, {
+        animate: true,
+        duration: 0.5, // Animaation kesto sekunneissa 
+      });
+    }
+  }, [selectedLocation, map]);
+
+  return null;
 };
 
 export default Map;
