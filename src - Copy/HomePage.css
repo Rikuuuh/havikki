@@ -1,0 +1,95 @@
+.container {
+    text-align: center;
+    background-color: #ffffff; /* Valkoinen tausta */
+    color: #004d00; /* Tummanvihreä teksti */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-top: 60px; /* Jotta navbar ei peitä sisältöä */
+  }
+  
+  .header {
+    margin-bottom: 20px;
+  }
+  
+  .logo {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+  }
+  
+  .title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin: 0;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+  }
+  
+  .map-container {
+    flex: 0 0 60%;
+    display: flex;
+    justify-content: center;
+  }
+  
+  .info-container {
+    flex: 0 0 40%;
+    padding: 20px;
+    text-align: left;
+  }
+  
+  .school-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .school-list li {
+    cursor: pointer;
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+  }
+  
+  .school-list li.selected {
+    background-color: #004d00;
+    color: #ffffff;
+  }
+  
+  .school-list li:hover {
+    background-color: #c0c0c0;
+  }
+  
+  .waste-info {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+  }
+  
+  .reserve-button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #004d00;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .reserve-button:hover {
+    background-color: #003300;
+  }
+  
+  .reserve-button.disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+  }
