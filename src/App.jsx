@@ -1,10 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import AdminPanel from './AdminPanel';
-import Navbar from './Navbar';
+import Navbar from './components/Navbar';
 import Map from './Map';
 import SchoolTable from './SchoolTable';
-import './App.css';
 
 const initialLocations = [
   { id: 1, name: 'Viikarin koulu', lat: 63.0745, lng: 27.6703, waste: { 'Lihapyörykät': '5 KG', 'Perunasose': '2,5 KG', 'Tomaattikastike': '5 KG', 'Salaatti': '2 KG' } },
@@ -32,17 +31,19 @@ const App = () => {
 
   return (
     <Router>
-      <div className="app">
+      <div className="">
         <Navbar userName={userName} />
-        <Routes>
-          <Route path="/admin" element={<AdminPanel locations={locations} updateWaste={updateWaste} />} />
-          <Route path="/" element={
-            <div className="main-content">
-              <Map locations={locations} selectedLocation={selectedLocation} onMarkerClick={handleLocationClick} mapRef={mapRef} />
-              <SchoolTable locations={locations} selectedLocation={selectedLocation} onLocationClick={handleLocationClick} />
-            </div>
-          } />
-        </Routes>
+        <div className="max-w-7xl mx-auto pt-20 px-6">
+          <Routes>
+            <Route path="/admin" element={<AdminPanel locations={locations} updateWaste={updateWaste} />} />
+            <Route path="/" element={
+              <div className="main-content">
+                <Map locations={locations} selectedLocation={selectedLocation} onMarkerClick={handleLocationClick} mapRef={mapRef} />
+                <SchoolTable locations={locations} selectedLocation={selectedLocation} onLocationClick={handleLocationClick} />
+              </div>
+            } />
+          </Routes>
+        </div>
       </div>
     </Router>
   );

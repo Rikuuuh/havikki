@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import './AdminPanel.css';
 
 const AdminPanel = ({ locations, updateWaste }) => {
   const [selectedLocation, setSelectedLocation] = useState(locations[0].id);
@@ -63,12 +62,12 @@ const AdminPanel = ({ locations, updateWaste }) => {
   ];
 
   return (
-    <div className="admin-panel">
-      <h1>{menu[0].date}</h1>
+    <div className="mt-20 p-6 bg-white shadow-md rounded-lg">
+      <h1 className="text-2xl font-bold mb-4">{menu[0].date}</h1>
       <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="location">Valitse koulu:</label>
-          <select id="location" value={selectedLocation} onChange={handleLocationChange}>
+        <div className="mb-4">
+          <label htmlFor="location" className="block text-lg font-medium mb-2">Valitse koulu:</label>
+          <select id="location" value={selectedLocation} onChange={handleLocationChange} className="w-full p-2 border border-gray-300 rounded-md">
             {locations.map((location) => (
               <option key={location.id} value={location.id}>
                 {location.name}
@@ -76,23 +75,24 @@ const AdminPanel = ({ locations, updateWaste }) => {
             ))}
           </select>
         </div>
-        <div className="menu-day">
-          <table>
+        <div className="overflow-x-auto">
+          <table className="min-w-full bg-white border border-gray-200">
             <thead>
               <tr>
-                <th>Ruoka</th>
-                <th>Jäljellä (KG)</th>
+                <th className="px-4 py-2 border-b">Ruoka</th>
+                <th className="px-4 py-2 border-b">Jäljellä (KG)</th>
               </tr>
             </thead>
             <tbody>
               {menu[0].dishes.map((dish, idx) => (
-                <tr key={idx}>
-                  <td>{dish.name}</td>
-                  <td>
+                <tr key={idx} className="hover:bg-gray-100">
+                  <td className="px-4 py-2 border-b">{dish.name}</td>
+                  <td className="px-4 py-2 border-b">
                     <input
                       type="number"
                       value={parseFloat(wasteAmounts[dish.name]) || 0}
                       onChange={(e) => handleWasteChange(e, dish.name)}
+                      className="w-full p-2 border border-gray-300 rounded-md"
                     />
                   </td>
                 </tr>
@@ -100,9 +100,11 @@ const AdminPanel = ({ locations, updateWaste }) => {
             </tbody>
           </table>
         </div>
-        <button type="submit">Päivitä hävikkiruoan määrät!</button>
+        <button type="submit" className="mt-4 w-full bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600">
+          Päivitä hävikkiruoan määrät!
+        </button>
       </form>
-      {message && <p className="message">{message}</p>}
+      {message && <p className="mt-4 text-green-600">{message}</p>}
     </div>
   );
 };
