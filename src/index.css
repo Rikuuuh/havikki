@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,4 +6,75 @@
 :root {
   font-family: "Poppins", sans-serif;
   color-scheme: light;
+  --footer-text-color: #ffffff;
+}
+
+body {
+  background-image: url('./images/graafinen-elementti.svg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 60vh;
+  background-position: center;
+}
+
+.navbar {
+  backdrop-filter: blur(10px);
+}
+
+footer {
+  position: relative;
+  background-image: url('./images/footer-elementti.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-weight: 600;
+  color: black;
+  padding: 3rem 2rem 2rem;
+}
+
+.footer-columns {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.footer-column {
+  flex: 1;
+  min-width: 200px;
+}
+
+footer h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.some-links {
+  display: flex;
+  list-style: none;
+  padding: 0;
+}
+
+.some-links li {
+  margin-right: 1rem;
+}
+
+.footer-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+}
+
+.footer-bottom ul {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+}
+
+.footer-bottom ul li {
+  margin-right: 1rem;
 }

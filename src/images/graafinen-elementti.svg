@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="1440"
+   height="918"
+   viewBox="0 0 1440 918"
+   fill="none"
+   version="1.1"
+   id="svg3"
+   sodipodi:docname="top-background.svg"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs3" />
+  <sodipodi:namedview
+     id="namedview3"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.25708061"
+     inkscape:cx="721.56356"
+     inkscape:cy="457.05508"
+     inkscape:window-width="1920"
+     inkscape:window-height="1056"
+     inkscape:window-x="1512"
+     inkscape:window-y="25"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="g3" />
+  <mask
+     id="mask0_21_10100"
+     style="mask-type:alpha"
+     maskUnits="userSpaceOnUse"
+     x="-17"
+     y="-918"
+     width="1457"
+     height="1836">
+    <rect
+       x="-17"
+       y="-918"
+       width="1457"
+       height="1836"
+       fill="#D9D9D9"
+       id="rect1" />
+  </mask>
+  <g
+     mask="url(#mask0_21_10100)"
+     id="g3">
+    <path
+       d="M1441.35 -920.432H-14.8915V832.377H1441.35V-920.432Z"
+       fill="#B17CDA"
+       id="path1" />
+    <path
+       d="M-17.4866 619.206C-17.4866 619.206 202.361 597.539 450.321 453.723C749.02 280.482 845.009 23.1263 1077.29 -43.9181C1358.31 -125.043 1690.99 27.8196 1690.99 27.8196V-920.432L-17.4866 -918.559V619.206Z"
+       fill="#008B62"
+       id="path2"
+       style="fill:#00875f;fill-opacity:1" />
+    <path
+       d="M1691.01 378.727C1691.01 378.727 1182.52 236.978 932.294 425.514C640.434 645.421 346.223 626.745 241.692 614.294C-50.8705 579.422 -303.534 294.49 -303.534 294.49L70.6363 1131.97L1691.01 1124.39V378.702V378.727Z"
+       fill="#F5F4F3"
+       id="path3" />
+  </g>
+</svg>

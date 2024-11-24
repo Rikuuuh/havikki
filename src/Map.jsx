@@ -33,7 +33,7 @@ const redIcon = new L.Icon({
 
 const Map = ({ locations, selectedLocation, onMarkerClick, mapRef }) => {
   return (
-    <MapContainer center={[selectedLocation.lat, selectedLocation.lng]} zoom={13} style={{ height: '400px', width: '70%' }} whenCreated={mapInstance => { mapRef.current = mapInstance; }}>
+    <MapContainer center={[selectedLocation.lat, selectedLocation.lng]} zoom={13} style={{ height: '100%', width: '100%' }} whenCreated={mapInstance => { mapRef.current = mapInstance; }}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
@@ -50,17 +50,11 @@ const Map = ({ locations, selectedLocation, onMarkerClick, mapRef }) => {
             },
           }}
         >
-          <Tooltip permanent >
+          <Tooltip permanent>
             <span>{location.name}</span>
           </Tooltip>
           <Popup>
             <h2>{location.name}</h2>
-            <p>Jäljellä oleva hävikki:</p>
-            <ul>
-              {Object.entries(location.waste).map(([dish, amount], idx) => (
-                <li key={idx}>{dish}: {amount}</li>
-              ))}
-            </ul>
           </Popup>
         </Marker>
       ))}
