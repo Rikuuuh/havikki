@@ -98,7 +98,7 @@ const App = () => {
 };
 
 const AppWrapper = () => (
-  <Router>
+  <Router basename="/havikki">
     <App />
   </Router>
 );
