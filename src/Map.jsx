@@ -33,7 +33,7 @@ const redIcon = new L.Icon({
 
 const Map = ({ locations, selectedLocation, onMarkerClick, mapRef }) => {
   return (
-    <MapContainer center={[selectedLocation.lat, selectedLocation.lng]} zoom={13} style={{ height: '100%', width: '100%' }} whenCreated={mapInstance => { mapRef.current = mapInstance; }}>
+    <MapContainer center={[selectedLocation.lat, selectedLocation.lng]} zoom={12} style={{ height: '100%', width: '100%', borderRadius: 10 }} whenCreated={mapInstance => { mapRef.current = mapInstance; }}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'

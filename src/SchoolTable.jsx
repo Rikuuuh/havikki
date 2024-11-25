@@ -14,7 +14,7 @@ const SchoolTable = ({ locations, selectedLocation, onLocationClick, onAddToCart
   return (
     <div className="flex flex-col p-5 bg-gray-100 border border-gray-300 rounded-lg w-full shadow-md h-full">
       <div className="mb-5">
-        <h2 className="text-xl font-bold mb-3">Valitse Koulu</h2>
+        <h2 className="text-xl font-bold mb-3 text-center">Saatavilla oleva hävikkiruoka</h2>
         <ul className="list-none p-0 m-0">
           {locations.map((location) => {
             const wasteAvailable = isWasteAvailable(location.waste);

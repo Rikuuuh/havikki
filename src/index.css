@@ -28,19 +28,19 @@ footer {
   background-size: cover;
   font-weight: 600;
   color: black;
-  padding: 3rem 2rem 2rem;
+  padding: 5rem 2rem 2rem;
 }
 
 .footer-columns {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 10rem;
 }
 
 .footer-column {
   flex: 1;
-  min-width: 200px;
+  min-width: 100px;
 }
 
 footer h2 {
@@ -51,11 +51,11 @@ footer h2 {
 .some-links {
   display: flex;
   list-style: none;
-  padding: 0;
+  padding: 2;
 }
 
 .some-links li {
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 
 .footer-bottom {
@@ -64,17 +64,17 @@ footer h2 {
   justify-content: space-between;
   align-items: center;
   margin-top: 2rem;
-  border-top: 1px solid #444;
-  padding-top: 1rem;
+  border-top: 2px solid #444;
+  padding-top: 2rem;
 }
 
 .footer-bottom ul {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
-  padding: 0;
+  padding: 1;
 }
 
 .footer-bottom ul li {
-  margin-right: 1rem;
+  margin-right: 2rem;
 }

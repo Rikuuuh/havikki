@@ -15,12 +15,12 @@ const Navbar = () => {
       <div className="container px-4 mx-auto relative lg:text-sm">
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
-            <Link to="" className="text-300">
-              <img className="h-10 w-auto mr-2" src={logo} alt="Logo" />
+            <Link to="">
+              <img className="h-12 w-auto mr-2" src={logo} alt="Logo" />
             </Link>
           </div>
           <div className="hidden lg:flex space-x-6 items-center">
-            <Link to="/admin" className="text-300">
+            <Link to="/admin" className="text-md text-white">
               Lisää hävikkiruokamäärät
             </Link>
           </div>
@@ -42,7 +42,7 @@ const Navbar = () => {
           </div>
         </div>
         {mobileDrawerOpen && (
-          <div className="fixed right-0 z-20 bg-neutral-900 w-full p-12 flex flex-col justify-center items-center lg:hidden">
+          <div className="fixed right-0 z-20 bg-neutral-50 w-full p-12 flex flex-col justify-center items-center lg:hidden">
             <ul>
               <li>
                 <Link to="/admin" className="block py-2">
