@@ -15,7 +15,7 @@ const Navbar = () => {
       <div className="container px-4 mx-auto relative lg:text-sm">
         <div className="flex justify-between items-center">
           <div className="flex items-center flex-shrink-0">
-            <Link to="/havikki">
+            <Link to="">
               <img className="h-12 w-auto mr-2" src={logo} alt="Logo" />
             </Link>
           </div>
