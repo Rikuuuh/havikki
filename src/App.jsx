@@ -62,7 +62,7 @@ const App = () => {
         <div className="lg:w-1/3 p-6 flex flex-col">
           <Routes>
             <Route path="/admin" element={<AdminPanel locations={locations} updateWaste={updateWaste} />} />
-            <Route path="/havikki" element={
+            <Route path="" element={
               <div className="main-content flex-grow">
                 <Map locations={locations} selectedLocation={selectedLocation} onMarkerClick={handleLocationClick} mapRef={mapRef} />
               </div>
